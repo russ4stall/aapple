@@ -1,0 +1,26 @@
+{
+  "name": "aapple",
+  "version": "1.0.0",
+  "description": "Simple site ",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass src/sass/ -o dist/css/",
+    "browserify": "browserify src/js/main.js -o dist/js/site.js -d",
+    "bruglify": "browserify src/js/main.js | uglifyjs -c > dist/js/site.min.js",
+    "html": "copyfiles -f src/index.html dist",
+    "build": "npm run sass && npm run bruglify && npm run html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "author": "Me",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^14.1.0",  
+    "copyfiles": "^1.2.0",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.2",
+    "uglify-js": "^2.8.18"
+  }
+}
